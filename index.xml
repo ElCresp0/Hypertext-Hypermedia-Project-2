@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="chesslav.xsl"?>
+<!DOCTYPE chesslav SYSTEM "chesslav.dtd">
+<chesslav lang="pl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="chesslav.xsd">
+    <wstep>
+        <pic src="obrazy/logo.jpg"><picTitle>logo</picTitle></pic>
+        <naglowek>Moje hobby: szachy</naglowek>
+        <linki typ="nav">
+            <link href="../historia/historia.html"><txt>historia</txt></link>
+            <link href="../warianty/warianty.html"><txt>warianty</txt></link>
+            <link href="../figury/figury.html"><txt>figury</txt></link>
+            <link href="../roszada/roszada1.html"><txt>roszada_css</txt></link>
+            <link href="../roszada/roszada2.html"><txt>roszada_js</txt></link>
+        </linki>
+    </wstep>
+    <tresc>
+        <segment id="1">
+            <naglowek>Kilka słów o mnie :)</naglowek>
+            <tekst>Zacząłem interesować się szachami w pierwszej klasie liceum, kiedy to zgłosiłem się jako chętny do reprezentowania szkoły w licealiadzie. Ze względu na turniej podjąłem próbę przyswojenia pryncypialnych zasad gry, najprostszych taktyk i debiutów. Szybko się wciągnąłem i niedługo po zawodach, zachęcony pozytywnym wynikiem założyłem pierwsze konto na szachowej stronie internetowej
+            <link href="https://lichess.org/"><txt>lichess.org</txt></link>. Tak rozpoczęło się moje uzależnienie - potrafiłem przesiadywać całe dni i noce grając z internetowymi rywalami i doskonaląc swoje umiejętności. Bardzo wiele godzin poświęciłem również na oglądanie materiałów (edukacyjnych i rozrywkowych) o szachowej tematyce. Do dziś brałem udział w 2 turniejach rankingowych na których zdobyłem dwa puchary i IV kategorię Polskiego Związku Szachowego.</tekst>
+        </segment>
+        <segment id="2">
+            <naglowek>Jak zostać arcymistrzem - prosty trick:</naglowek>
+            <tekst rodzaj="secret">[sposób na osiągnięcie mistrzostwa]</tekst>
+        </segment>
+        <segment id="3">
+            <naglowek>figury:</naglowek>
+            <galeria>
+                <figure>
+                    <pic src="obrazy/figury/pionek.svg"><picTitle>pionek</picTitle></pic>
+                    <podpis>pionek</podpis>
+                </figure>
+                <figure>
+                    <pic src="obrazy/figury/goniec.jpg"><picTitle>goniec</picTitle></pic>
+                    <podpis>goniec</podpis>
+                </figure>
+                <figure>
+                    <pic src="obrazy/figury/skoczek.jpg"><picTitle>skoczek</picTitle></pic>
+                    <podpis>skoczek</podpis>
+                </figure>
+                <figure>
+                    <pic src="obrazy/figury/wieza.jpg"><picTitle>wieza</picTitle></pic>
+                    <podpis>wieza</podpis>
+                </figure>
+                <figure>
+                    <pic src="obrazy/figury/hetman.jpg"><picTitle>hetman</picTitle></pic>
+                    <podpis>hetman</podpis>
+                </figure>
+                <figure>
+                    <pic src="obrazy/figury/krol.jpg"><picTitle>krol</picTitle></pic>
+                    <podpis>krol</podpis>
+                </figure>
+            </galeria>
+        </segment>
+        <segment id="4">
+            <naglowek>Mistrzowie świata:</naglowek>
+            <mistrzowie>
+                <mistrz id="1">Wilhelm Steinitz</mistrz>
+				<mistrz id="2">Emanuel Lasker</mistrz>
+				<mistrz id="3">Jose Raul Capablanca</mistrz>
+				<mistrz id="4">Aleksander Alechin</mistrz>
+				<mistrz id="5">Max Euwe</mistrz>
+                <mistrz id="6">Michaił Botwinnik</mistrz>
+				<mistrz id="7">Wasilij Smysłow</mistrz>
+				<mistrz id="8">Michaił Tal</mistrz>
+				<mistrz id="9">Tigran Petrosjan</mistrz>
+				<mistrz id="10">Borys Spasski</mistrz>
+				<mistrz id="11">Bobby Fischer</mistrz>
+				<mistrz id="12">Anatolij Karpow</mistrz>
+				<mistrz id="13">Garri Kasparow</mistrz>
+				<mistrz id="14">Władimir Kramnik</mistrz>
+				<mistrz id="15">Viswanathan Anand</mistrz>
+				<mistrz id="16">Magnus Carlsen <rating>2862</rating></mistrz>
+            </mistrzowie>
+        </segment>
+    </tresc>
+    <stopka>
+        <autor>Autor strony: Jakub Kiliańczyk s18430</autor>
+        <link href="https://lichess.org/@/COUNTERREVOLUTIONAXE"><txt>moje konto na lichess</txt></link>
+    </stopka>
+</chesslav>

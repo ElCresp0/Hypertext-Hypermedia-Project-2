@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<xs:element name="chesslav">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="wstep" type="wstepType" />
+            <xs:element name="tresc" type="trescType" />
+            <xs:element ref="stopka" />
+        </xs:sequence>
+        <xs:attribute name="lang" type="xs:string" />
+    </xs:complexType>
+</xs:element>
+<xs:element name="stopka">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="autor" type="xs:string" />
+            <xs:element ref="linki" minOccurs="0" />
+            <xs:element ref="link" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+<xs:complexType name="wstepType">
+    <xs:sequence>
+        <xs:element ref="pic" minOccurs="0" />
+        <xs:element ref="naglowek" minOccurs="0"/>
+        <xs:element ref="linki" minOccurs="0"/>
+    </xs:sequence>
+</xs:complexType>
+<xs:element name="pic" type="picType" />
+<xs:complexType name="picType">
+    <xs:all>
+        <xs:element name="picTitle" type="xs:string" />
+    </xs:all>
+    <xs:attribute name="src" type="xs:string" />
+</xs:complexType>
+<xs:complexType name="trescType">
+    <xs:sequence>
+        <xs:element ref="segment" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+</xs:complexType>
+<xs:element name="segment" type="segmentType" />
+<xs:complexType name="segmentType">
+    <xs:complexContent>
+        <xs:extension base="wstepType">
+            <xs:sequence>
+                <xs:element ref="galeria" minOccurs="0" />
+                <xs:element ref="tekst" minOccurs="0" />
+                <xs:element name="mistrzowie" minOccurs="0" type="lista" />
+            </xs:sequence>
+            <xs:attribute name="id" type="idInt" />
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+<xs:complexType name="lista">
+    <xs:sequence>
+        <xs:element name="mistrz" type="mistrzType" maxOccurs="unbounded" minOccurs="2" />
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="mistrzType" mixed="true">
+    <xs:sequence>
+	<xs:element name="rating" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idInt"/>
+</xs:complexType>
+<xs:element name="galeria" type="galeriaType" />
+<xs:complexType name="galeriaType">
+    <xs:sequence>
+        <xs:element name="figure" type="figureType" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="figureType">
+    <xs:group ref="figureGroup" />
+</xs:complexType>
+<xs:group name="figureGroup">
+    <xs:sequence>
+        <xs:element ref="pic" />
+        <xs:element name="podpis" type="xs:string" />
+    </xs:sequence>
+</xs:group>
+<xs:element name="naglowek" type="headString" />
+<xs:element name="tekst">
+    <xs:complexType mixed="true">
+        <xs:sequence>
+            <xs:element ref="link" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="rodzaj" type="rodzajType" use="optional" />
+    </xs:complexType>
+</xs:element>
+<xs:element name="linki">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="link" minOccurs="2" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute ref="typ" />
+    </xs:complexType>
+</xs:element>
+<xs:attribute name="typ" type="xs:string" />
+<xs:element name="link">
+    <xs:complexType>
+        <xs:all>
+            <xs:element name="txt" type="linkString" />
+        </xs:all>
+        <xs:attribute name="href" type="hrefString" />
+    </xs:complexType>
+</xs:element>
+<xs:simpleType name="hrefString">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="5" />
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="linkString">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="2" />
+        <xs:maxLength value="25" />
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="rodzajType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="secret"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="headString">
+    <xs:restriction base="xs:string">
+        <xs:whiteSpace value="preserve" />
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="idInt">
+    <xs:restriction base="xs:integer">
+        <xs:minInclusive value="1" />
+        <xs:maxExclusive value="17" />
+    </xs:restriction>
+</xs:simpleType>
+</xs:schema>

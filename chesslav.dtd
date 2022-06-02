@@ -1,0 +1,29 @@
+<!ELEMENT chesslav (wstep,tresc,stopka)>
+    <!ATTLIST chesslav lang (pl|eng) "pl">
+    <!ATTLIST chesslav xmlns:xsi CDATA #IMPLIED>
+    <!ATTLIST chesslav xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+    <!ELEMENT wstep (pic,naglowek,linki)>
+        <!ELEMENT pic (picTitle)>
+            <!ATTLIST pic src CDATA #REQUIRED>
+            <!ELEMENT picTitle (#PCDATA)>
+        <!ELEMENT naglowek (#PCDATA)>
+        <!ELEMENT linki (link+)>
+            <!ATTLIST linki typ CDATA "nav">
+            <!ELEMENT link (txt)>
+                <!ATTLIST link href CDATA #REQUIRED>
+                <!ELEMENT txt (#PCDATA)>
+    <!ELEMENT tresc (segment+)>
+        <!ELEMENT segment (naglowek,(tekst|galeria|mistrzowie))>
+            <!ATTLIST segment id CDATA #REQUIRED>
+            <!ELEMENT tekst (#PCDATA|link)*>
+                <!ATTLIST tekst rodzaj CDATA #IMPLIED>
+            <!ELEMENT galeria (figure+)>
+                <!ELEMENT figure (pic,podpis)>
+                    <!ELEMENT podpis (#PCDATA)>
+            <!ELEMENT mistrzowie (mistrz+)>
+                <!ELEMENT mistrz (#PCDATA|rating)>
+			<!ATTLIST mistrz id CDATA #REQUIRED>
+			<!ELEMENT rating (#PCDATA)>
+    <!ELEMENT stopka (autor,link)>
+        <!ELEMENT autor (#PCDATA)>
+<!ENTITY author "Autor strony: Jakub Kiliańczyk s18430">
